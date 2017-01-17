@@ -8,8 +8,11 @@
 
 import Foundation
 
-print("Je suis la branche Manager")
+print("Je suis la branche master")
 
-var a = Manager(Name: "toto")
+let a = npuzzleError.success
+//let a = npuzzleError.fail
 
-print(a.str)
+print(a.what())
+
+exit(Int32(a.hashValue))
