@@ -1,5 +1,5 @@
 //
-//  main.swift
+//  Manager.swift
 //  npuzzle
 //
 //  Created by luc Casimir on 17/01/2017.
@@ -8,8 +8,12 @@
 
 import Foundation
 
-print("Je suis la branche Manager")
-
-var a = Manager(Name: "toto")
-
-print(a.str)
+class Manager
+{
+    var str : String
+    
+    init(Name s:String)
+    {
+        str = s
+    }
+}
