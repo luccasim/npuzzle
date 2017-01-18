@@ -39,9 +39,9 @@ class Manager
         print("call makePuzzle() method called")
         let parser = Parser()
         errorHandle = parser.errorhandle
-        if let file = parser.fileData{
-            print("Contenue du fichier : \(file)")
-        }
+//        if let file = parser.fileData{
+//            print("Contenue du fichier : \(file)")
+//        }
     }
     
     func resolvePuzzle()

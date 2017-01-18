@@ -12,11 +12,26 @@ class Parser
 {
     var fileData : String?
     var errorhandle = npuzzleError.success
+    var tokens = [Token]()
     
     enum tokenId : Int
     {
         case unknow = 0
         case size, line, error
+        
+        func display() -> String
+        {
+            switch self {
+            case .size:
+                return "[size]"
+            case .line:
+                return "[line]"
+            case .error:
+                return "[error]"
+            default:
+                return "[unknow]"
+            }
+        }
     }
     
     class Token
@@ -27,6 +42,11 @@ class Parser
         init(String str: String)
         {
             token = str
+        }
+        
+        func display() -> String
+        {
+            return "\(label.display())[\(token)]"
         }
     }
     
@@ -57,9 +77,48 @@ class Parser
         {
             let open = try Data()
             fileData = open.data
+            lexer()
+            showTokens()
         }
         catch npuzzleError.open {errorhandle = .open}
         catch npuzzleError.argc {errorhandle = .argc}
         catch {errorhandle = .unknow}
+    }
+    
+    private func showTokens()
+    {
+        if tokens.count >= 1
+        {
+            for elem in tokens
+            {
+                print("\(elem.display())")
+            }
+        }
+    }
+    
+    private func trimToken(line str: String) -> String
+    {
+        if let a = str.range(of: " #"){
+            return str.substring(to: a.lowerBound)
+            
+        }
+        else if let b = str.range(of: "#"){
+            return str.substring(to: b.lowerBound)
+        }
+        else {return str}
+    }
+    
+    private func lexer ()
+    {
+        if let data = fileData
+        {
+            let getline = data.components(separatedBy: "\n")
+            
+            for elem in getline
+            {
+                let str = trimToken(line: elem)
+                tokens.append(Token(String: str))
+            }
+        }
     }
 }

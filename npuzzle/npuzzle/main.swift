@@ -15,4 +15,16 @@ obj.resolvePuzzle()
 obj.displayPuzzle()
 
 obj.exitPuzzle()
+//
+//let str = "Toto aime les # bits !"
+//
+//let a = str.range(of: " #")
+//let b = str.rangeOfCharacter(from: CharacterSet.init(charactersIn: "#"))
+//let c = str.trimmingCharacters(in: CharacterSet.init(charactersIn: "#"))
+//let d = str.substring(to: (a?.lowerBound)!)
+//
+//print(a?.lowerBound)
+//print(b?.lowerBound)
+//print(c)
+//print(d)
 
