@@ -14,4 +14,5 @@ obj.makePuzzle()
 obj.resolvePuzzle()
 obj.displayPuzzle()
 
-exit(obj.exitValue)
+obj.exitPuzzle()
+

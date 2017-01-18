@@ -1,0 +1,6 @@
+#Bonjour Je suis un Fichier Non Valide
+3
+1 2 3
+1 2 3
+1 2 3 #Toto aime les bits !
+Viens me parser !

@@ -12,6 +12,8 @@
 		C6455A7E1E2F718900CEC2FB /* testManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6455A7D1E2F718900CEC2FB /* testManager.swift */; };
 		C6455A7F1E2F71C700CEC2FB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8CFC321E2E66D5006E9E1A /* main.swift */; };
 		C6455A801E2F71E700CEC2FB /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8CFC391E2E67AC006E9E1A /* Manager.swift */; };
+		C6455A821E2F751A00CEC2FB /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6455A811E2F751A00CEC2FB /* Parser.swift */; };
+		C6455A851E2F921300CEC2FB /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6455A811E2F751A00CEC2FB /* Parser.swift */; };
 		DE8CFC331E2E66D5006E9E1A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8CFC321E2E66D5006E9E1A /* main.swift */; };
 		DE8CFC3A1E2E67AC006E9E1A /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8CFC391E2E67AC006E9E1A /* Manager.swift */; };
 		DE8CFC3C1E2E69D9006E9E1A /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8CFC3B1E2E69D9006E9E1A /* Error.swift */; };
@@ -34,6 +36,9 @@
 		68674B4E1E2E775E009F597B /* testError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testError.swift; sourceTree = "<group>"; };
 		68674B501E2E775E009F597B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6455A7D1E2F718900CEC2FB /* testManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testManager.swift; sourceTree = "<group>"; };
+		C6455A811E2F751A00CEC2FB /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		C6455A831E2F8CEB00CEC2FB /* Toto.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Toto.txt; path = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/../../../../../../../../../Users/luccasim/toto/npuzzle/npuzzle/npuzzle/Toto.txt; sourceTree = "<absolute>"; };
+		C6455A861E2F92F500CEC2FB /* Titi.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Titi.txt; sourceTree = "<group>"; };
 		DE8CFC2F1E2E66D5006E9E1A /* npuzzle */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = npuzzle; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8CFC321E2E66D5006E9E1A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = main.swift; sourceTree = "<group>"; };
 		DE8CFC391E2E67AC006E9E1A /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
@@ -68,9 +73,20 @@
 			path = testError;
 			sourceTree = "<group>";
 		};
+		C6455A841E2F8DD000CEC2FB /* FileData */ = {
+			isa = PBXGroup;
+			children = (
+				C6455A831E2F8CEB00CEC2FB /* Toto.txt */,
+				C6455A861E2F92F500CEC2FB /* Titi.txt */,
+			);
+			name = FileData;
+			path = npuzzle;
+			sourceTree = "<group>";
+		};
 		DE8CFC261E2E66D5006E9E1A = {
 			isa = PBXGroup;
 			children = (
+				C6455A841E2F8DD000CEC2FB /* FileData */,
 				DE8CFC311E2E66D5006E9E1A /* npuzzle */,
 				68674B4D1E2E775E009F597B /* testError */,
 				DE8CFC301E2E66D5006E9E1A /* Products */,
@@ -92,6 +108,7 @@
 				DE8CFC3B1E2E69D9006E9E1A /* Error.swift */,
 				DE8CFC321E2E66D5006E9E1A /* main.swift */,
 				DE8CFC391E2E67AC006E9E1A /* Manager.swift */,
+				C6455A811E2F751A00CEC2FB /* Parser.swift */,
 			);
 			path = npuzzle;
 			sourceTree = "<group>";
@@ -188,6 +205,7 @@
 			files = (
 				68674B541E2E7777009F597B /* Error.swift in Sources */,
 				68674B4F1E2E775E009F597B /* testError.swift in Sources */,
+				C6455A851E2F921300CEC2FB /* Parser.swift in Sources */,
 				C6455A7F1E2F71C700CEC2FB /* main.swift in Sources */,
 				C6455A7E1E2F718900CEC2FB /* testManager.swift in Sources */,
 				C6455A801E2F71E700CEC2FB /* Manager.swift in Sources */,
@@ -198,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6455A821E2F751A00CEC2FB /* Parser.swift in Sources */,
 				DE8CFC3C1E2E69D9006E9E1A /* Error.swift in Sources */,
 				DE8CFC331E2E66D5006E9E1A /* main.swift in Sources */,
 				DE8CFC3A1E2E67AC006E9E1A /* Manager.swift in Sources */,

@@ -10,15 +10,38 @@ import Foundation
 
 class Manager
 {
-    var errorHandle = npuzzleError.success
+    // Properties
     
-    var exitValue : Int32{
+    var errorHandle : npuzzleError
+    
+    // Computed Properties
+    
+    var printError : Int32
+    {
+        if errorHandle != .success
+        {
+            print(errorHandle.what())
+        }
         return (Int32(errorHandle.hashValue))
     }
     
+    // Initializers
+    
+    init()
+    {
+        errorHandle = .success
+    }
+    
+    // Methods
+    
     func makePuzzle()
     {
-        print("call makePuzzle() methodc called")
+        print("call makePuzzle() method called")
+        let parser = Parser()
+        errorHandle = parser.errorhandle
+        if let file = parser.fileData{
+            print("Contenue du fichier : \(file)")
+        }
     }
     
     func resolvePuzzle()
@@ -29,5 +52,10 @@ class Manager
     func displayPuzzle()
     {
         print("call displayPuzzle() method called")
+    }
+    
+    func exitPuzzle()
+    {
+        exit(printError)
     }
 }
