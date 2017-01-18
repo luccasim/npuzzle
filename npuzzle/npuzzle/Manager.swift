@@ -10,10 +10,24 @@ import Foundation
 
 class Manager
 {
-    var str : String
+    var errorHandle = npuzzleError.success
     
-    init(Name s:String)
+    var exitValue : Int32{
+        return (Int32(errorHandle.hashValue))
+    }
+    
+    func makePuzzle()
     {
-        str = s
+        print("call makePuzzle() methodc called")
+    }
+    
+    func resolvePuzzle()
+    {
+        print("call resolvePuzzle() method called")
+    }
+    
+    func displayPuzzle()
+    {
+        print("call displayPuzzle() method called")
     }
 }

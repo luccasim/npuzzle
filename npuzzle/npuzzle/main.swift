@@ -8,3 +8,10 @@
 
 import Foundation
 
+let obj = Manager()
+
+obj.makePuzzle()
+obj.resolvePuzzle()
+obj.displayPuzzle()
+
+exit(obj.exitValue)
