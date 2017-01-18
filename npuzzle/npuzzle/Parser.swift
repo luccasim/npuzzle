@@ -10,10 +10,14 @@ import Foundation
 
 class Parser
 {
+    //Properties
+    
     var fileData : String?
     var errorhandle = npuzzleError.success
     var tokens = [Token]()
     
+    // Nested Class
+
     enum tokenId : Int
     {
         case unknow = 0
@@ -71,19 +75,23 @@ class Parser
         }
     }
     
+    //Initializer
+    
     init()
     {
         do
         {
             let open = try Data()
             fileData = open.data
-            lexer()
+            tokenizer()
             showTokens()
         }
         catch npuzzleError.open {errorhandle = .open}
         catch npuzzleError.argc {errorhandle = .argc}
         catch {errorhandle = .unknow}
     }
+    
+    //Methods
     
     private func showTokens()
     {
@@ -108,7 +116,7 @@ class Parser
         else {return str}
     }
     
-    private func lexer ()
+    private func tokenizer()
     {
         if let data = fileData
         {
@@ -119,6 +127,32 @@ class Parser
                 let str = trimToken(line: elem)
                 tokens.append(Token(String: str))
             }
+        }
+    }
+    
+    private func analyze(_ tok: Token)
+    {
+        if Int(tok.token) != nil{
+            tok.label = .size
+        }
+        else
+        {
+            let tab = tok.token.components(separatedBy: " ")
+            var err = true
+        
+            for elem in tab
+            {
+                if Int(elem) == nil {err = false}
+            }
+            tok.label = (err == true) ? .line : .un
+        }
+    }
+    
+    private func lexer()
+    {
+        for elem in tokens
+        {
+            analyze(elem)
         }
     }
 }
