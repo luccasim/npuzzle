@@ -84,6 +84,7 @@ class Parser
             let open = try Data()
             fileData = open.data
             tokenizer()
+            lexer()
             showTokens()
         }
         catch npuzzleError.open {errorhandle = .open}
@@ -113,7 +114,9 @@ class Parser
         else if let b = str.range(of: "#"){
             return str.substring(to: b.lowerBound)
         }
-        else {return str}
+        else {
+            return str.trimmingCharacters(in: CharacterSet.init(charactersIn: " "))
+        }
     }
     
     private func tokenizer()
@@ -132,22 +135,26 @@ class Parser
     
     private func analyze(_ tok: Token)
     {
-        if Int(tok.token) != nil{
-            tok.label = .size
+        let tab = tok.token.components(separatedBy: " ")
+        
+        if tab.count == 1 {
+            if Int(tok.token) != nil{
+                tok.label = .size
+            }
+            else if tok.token != "" {tok.label = .error}
         }
         else
         {
-            let tab = tok.token.components(separatedBy: " ")
             var err = true
-        
+
             for elem in tab
             {
                 if Int(elem) == nil {err = false}
             }
-            tok.label = (err == true) ? .line : .un
+            tok.label = (err == true) ? .line : .error
         }
     }
-    
+
     private func lexer()
     {
         for elem in tokens
