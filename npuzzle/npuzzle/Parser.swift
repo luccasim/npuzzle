@@ -12,7 +12,8 @@ class Parser
 {
     //Properties
     
-    var fileData : String?
+    var taquin : (Int, [String:Int])?
+    private var fileData : String?
     var errorhandle = npuzzleError.success
     var tokens = [Token]()
     
@@ -86,9 +87,15 @@ class Parser
             tokenizer()
             lexer()
             showTokens()
+            try parsing()
+            showPuzzle()
         }
         catch npuzzleError.open {errorhandle = .open}
         catch npuzzleError.argc {errorhandle = .argc}
+        catch npuzzleError.size {errorhandle = .size}
+        catch npuzzleError.sizeline {errorhandle = .sizeline}
+        catch npuzzleError.nbline {errorhandle = .nbline}
+        catch npuzzleError.unvalidline {errorhandle = .unvalidline}
         catch {errorhandle = .unknow}
     }
     
@@ -101,6 +108,74 @@ class Parser
             for elem in tokens
             {
                 print("\(elem.display())")
+            }
+        }
+    }
+    
+    private func stringToInt(str: String) -> [Int]
+    {
+        let tab = str.components(separatedBy: " ")
+        var res = [Int]()
+
+        for elem in tab
+        {
+            if let nb = Int(elem){
+                res.append(nb)
+            }
+        }
+        return res
+    }
+    
+    private func parsing() throws
+    {
+        if tokens.count >= 1
+        {
+            var size = 0
+            var flag = 0
+            for elem in tokens
+            {
+                guard elem.label != .error else {throw npuzzleError.unvalidline}
+                if size == 0 && elem.label == .size
+                {
+                    size = Int(elem.token)!
+                    flag = flag + 1
+                }
+            }
+            guard flag == 1 else {throw npuzzleError.size}
+
+            flag = 0
+            var i = 0;
+            var dict = [String: Int]()
+            for elem in tokens
+            {
+
+                if elem.label == .line
+                {
+                    let line = stringToInt(str: elem.token)
+            
+                    guard size == line.count else {throw npuzzleError.sizeline}
+                    for nb in line
+                    {
+                        dict[String(i)] = nb
+                        i = i + 1
+                    }
+                    flag = flag + 1
+                }
+            }
+            guard flag == size else {throw npuzzleError.nbline}
+            self.taquin = (size, dict)
+        }
+    }
+    
+    private func showPuzzle()
+    {
+        if let puz = taquin
+        {
+            print("size = \(puz.0) number = \(puz.1.count)")
+            
+            for (key, value) in (puz.1)
+            {
+                print("\(key) = \(value)")
             }
         }
     }
