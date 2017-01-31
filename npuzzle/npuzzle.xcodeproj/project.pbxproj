@@ -39,7 +39,6 @@
 		C628B8711E37D4CD0016D3F1 /* multiSize */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = multiSize; sourceTree = "<group>"; };
 		C6455A7D1E2F718900CEC2FB /* testManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testManager.swift; sourceTree = "<group>"; };
 		C6455A811E2F751A00CEC2FB /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
-		C6455A831E2F8CEB00CEC2FB /* Toto.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Toto.txt; path = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/../../../../../../../../../Users/luccasim/toto/npuzzle/npuzzle/npuzzle/Toto.txt; sourceTree = "<absolute>"; };
 		C6455A861E2F92F500CEC2FB /* Titi.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Titi.txt; sourceTree = "<group>"; };
 		DE8CFC2F1E2E66D5006E9E1A /* npuzzle */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = npuzzle; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8CFC321E2E66D5006E9E1A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = main.swift; sourceTree = "<group>"; };
@@ -78,7 +77,6 @@
 		C6455A841E2F8DD000CEC2FB /* FileData */ = {
 			isa = PBXGroup;
 			children = (
-				C6455A831E2F8CEB00CEC2FB /* Toto.txt */,
 				C6455A861E2F92F500CEC2FB /* Titi.txt */,
 				C628B8701E37D4630016D3F1 /* NoSize.txt */,
 				C628B8711E37D4CD0016D3F1 /* multiSize */,

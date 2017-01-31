@@ -2,9 +2,9 @@
 3
 1 2 3
 1 o 3
-1 2 3 #Toto aime les bits !
+1 2 3 #Toto vas à l'école' !
 
 
 oklm 3
-toto    aime    labite
+toto    aime
 Viens me parser !
